@@ -1,17 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Profile2 from './images/pic2.jpg';
+import Profile1 from './images/pic1.png';
+import Profile3 from './images/pic3.jpg';
+
+import UserComment from './components/UserComment';
+import UserCard from './components/UserCard';
+
+
+const App = () => {
+    return (
+        <>
+        <div>
+            <UserCard >
+            <UserComment 
+                name='Sarah'
+                time='Today at 5:00PM' 
+                text={('Lorem Ipsum').repeat(5)} 
+                picture={Profile1}
+            /> 
+            </UserCard>
+        </div>
+        <div className='ui comments'>
+            <UserComment 
+                name='Sarah'
+                time='Today at 5:00PM' 
+                text={('Lorem Ipsum').repeat(5)} 
+                picture={Profile1}
+            /> 
+            <UserComment 
+                name='Alex'
+                time='Today at 3:00PM'
+                text={('Lorem Ipsum').repeat(5)}
+                picture={Profile2}
+            /> 
+            <UserComment 
+                name='Jack' 
+                time='Today at 4:00AM' 
+                text={('Lorem Ipsum').repeat(5)} 
+                picture={Profile3}
+            /> 
+        </div>
+        </>
+    );
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App />,
+    document.querySelector('#root')
+)
